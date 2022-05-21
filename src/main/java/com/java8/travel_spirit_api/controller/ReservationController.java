@@ -2,16 +2,17 @@ package com.java8.travel_spirit_api.controller;
 
 import com.java8.travel_spirit_api.dto.ReservationDTO;
 import com.java8.travel_spirit_api.service.ReservationService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/reservation")
 public class ReservationController {
-    @Autowired
-    private ReservationService reservationService;
+
+    protected ReservationService reservationService;
 
     @GetMapping("")
     public List<ReservationDTO> getReservations() {

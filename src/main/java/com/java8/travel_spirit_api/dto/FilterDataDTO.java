@@ -9,6 +9,6 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FilterDataDto {
+public class FilterDataDTO {
     protected List<CityDTO> cities;
 }

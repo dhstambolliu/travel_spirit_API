@@ -4,13 +4,14 @@ import com.java8.travel_spirit_api.dto.RatingDTO;
 import com.java8.travel_spirit_api.entity.Rating;
 import com.java8.travel_spirit_api.repository.RatingRepository;
 import com.java8.travel_spirit_api.service.RatingService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class RatingServiceImpl implements RatingService {
-    @Autowired
-    private RatingRepository ratingRepository;
+
+    protected RatingRepository ratingRepository;
 
     private RatingDTO mapRatingToDTO(Rating rating) {
         RatingDTO ratingDTO = new RatingDTO();

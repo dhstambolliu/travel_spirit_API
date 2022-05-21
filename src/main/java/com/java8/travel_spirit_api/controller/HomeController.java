@@ -1,6 +1,6 @@
 package com.java8.travel_spirit_api.controller;
 
-import com.java8.travel_spirit_api.dto.FilterDataDto;
+import com.java8.travel_spirit_api.dto.FilterDataDTO;
 import com.java8.travel_spirit_api.dto.PackageFilter;
 import com.java8.travel_spirit_api.dto.PackagesDTO;
 import com.java8.travel_spirit_api.entity.Packages;
@@ -26,10 +26,10 @@ public class HomeController {
     }
 
     @GetMapping("/filter-data")
-    public FilterDataDto getFilterData() {
+    public FilterDataDTO getFilterData() {
 
 
-        FilterDataDto response = FilterDataDto.builder()
+        FilterDataDTO response = FilterDataDTO.builder()
                 .cities(cityService.getForSelect())
                 .build();
 

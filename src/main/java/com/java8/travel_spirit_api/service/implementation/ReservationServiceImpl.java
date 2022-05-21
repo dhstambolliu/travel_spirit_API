@@ -4,32 +4,31 @@ import com.java8.travel_spirit_api.dto.ReservationDTO;
 import com.java8.travel_spirit_api.entity.Reservation;
 import com.java8.travel_spirit_api.repository.ReservationRepository;
 import com.java8.travel_spirit_api.service.ReservationService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class ReservationServiceImpl implements ReservationService {
 
-    @Autowired
-    private ReservationRepository reservationRepository;
-
+    protected ReservationRepository reservationRepository;
 
     private ReservationDTO mapReservationToDTO(Reservation reservation) {
         ReservationDTO reservationDTO = new ReservationDTO();
         reservationDTO.setId(reservation.getId());
-        reservationDTO.setReservation_date(reservation.getReservationDate());
-        reservationDTO.setNumber_of_persons(reservation.getPeople());
+        reservationDTO.setReservationDate(reservation.getReservationDate());
+        reservationDTO.setPeople(reservation.getPeople());
         return reservationDTO;
     }
 
     private Reservation mapDTOToReservation(ReservationDTO reservationDTO) {
         Reservation reservation = new Reservation();
         reservation.setId(reservationDTO.getId());
-        reservation.setReservationDate(reservationDTO.getReservation_date());
-        reservation.setPeople(reservationDTO.getNumber_of_persons());
+        reservation.setReservationDate(reservationDTO.getReservationDate());
+        reservation.setPeople(reservationDTO.getPeople());
         return reservation;
     }
 

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity(name = "reservation_entity")
+@Entity(name = "reservation")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

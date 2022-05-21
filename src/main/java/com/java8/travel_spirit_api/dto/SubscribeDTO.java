@@ -6,5 +6,5 @@ import lombok.Data;
 public class SubscribeDTO {
     private Long id;
     private String email;
-    private Boolean is_active;
+    private Boolean active;
 }

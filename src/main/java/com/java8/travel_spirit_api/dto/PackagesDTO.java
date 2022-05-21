@@ -9,8 +9,9 @@ public class PackagesDTO {
     private Double price;
     private String description;
     private int duration;
-    private Boolean promotional_offer;
-    private Double promotional_offer_price;
-    private String image_url;
-    private Boolean is_active;
+    private Boolean promotionalOffer;
+    private Double promotionalOfferPrice;
+    private String imageUrl;
+    private Boolean active;
+    private Boolean featured;
 }

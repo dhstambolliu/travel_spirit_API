@@ -4,16 +4,16 @@ import com.java8.travel_spirit_api.dto.SubscribeDTO;
 import com.java8.travel_spirit_api.entity.Subscribe;
 import com.java8.travel_spirit_api.repository.SubscribeRepository;
 import com.java8.travel_spirit_api.service.SubscribeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class SubscribeServiceImpl implements SubscribeService {
-    @Autowired
-    private SubscribeRepository subscribeRepository;
+    protected SubscribeRepository subscribeRepository;
 
     @Override
     public void addSubscription(SubscribeDTO subscribeDTO) {
@@ -31,7 +31,7 @@ public class SubscribeServiceImpl implements SubscribeService {
         SubscribeDTO subscribeDTO = new SubscribeDTO();
         subscribeDTO.setId(subscribe.getId());
         subscribeDTO.setEmail(subscribe.getEmail());
-        subscribeDTO.setIs_active(subscribe.getActive());
+        subscribeDTO.setActive(subscribe.getActive());
         return subscribeDTO;
     }
 
@@ -39,7 +39,7 @@ public class SubscribeServiceImpl implements SubscribeService {
         Subscribe subscribe = new Subscribe();
         subscribe.setId(subscribeDTO.getId());
         subscribe.setEmail(subscribeDTO.getEmail());
-        subscribe.setActive(subscribeDTO.getIs_active());
+        subscribe.setActive(subscribeDTO.getActive());
         return subscribe;
     }
 }

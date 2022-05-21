@@ -7,6 +7,6 @@ import java.util.Date;
 @Data
 public class ReservationDTO {
     private Long id;
-    private Date reservation_date;
-    private int number_of_persons;
+    private Date reservationDate;
+    private int people;
 }

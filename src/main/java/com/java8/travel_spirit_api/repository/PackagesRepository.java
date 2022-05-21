@@ -3,7 +3,6 @@ package com.java8.travel_spirit_api.repository;
 import com.java8.travel_spirit_api.entity.Packages;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

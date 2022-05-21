@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity(name = "rating_entity")
+@Entity(name = "rating")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

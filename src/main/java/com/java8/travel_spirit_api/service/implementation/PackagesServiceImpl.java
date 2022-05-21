@@ -24,11 +24,12 @@ public class PackagesServiceImpl implements PackagesService {
         packagesDTO.setName(packages.getName());
         packagesDTO.setDescription(packages.getDescription());
         packagesDTO.setDuration(packages.getDuration());
-        packagesDTO.setIs_active(packages.getActive());
+        packagesDTO.setActive(packages.getActive());
         packagesDTO.setPrice(packages.getPrice());
-        packagesDTO.setImage_url(packages.getImageUrl());
-        packagesDTO.setPromotional_offer(packages.getPromotionalOffer());
-        packagesDTO.setPromotional_offer_price(packages.getPromotionalOfferPrice());
+        packagesDTO.setImageUrl(packages.getImageUrl());
+        packagesDTO.setPromotionalOffer(packages.getPromotionalOffer());
+        packagesDTO.setPromotionalOfferPrice(packages.getPromotionalOfferPrice());
+        packagesDTO.setFeatured(packages.getFeatured());
         return packagesDTO;
     }
 
@@ -38,11 +39,12 @@ public class PackagesServiceImpl implements PackagesService {
         packages.setName(packagesDTO.getName());
         packages.setDescription(packagesDTO.getDescription());
         packages.setDuration(packagesDTO.getDuration());
-        packages.setActive(packagesDTO.getIs_active());
+        packages.setActive(packagesDTO.getActive());
         packages.setPrice(packagesDTO.getPrice());
-        packages.setImageUrl(packagesDTO.getImage_url());
-        packages.setPromotionalOffer(packagesDTO.getPromotional_offer());
-        packages.setPromotionalOfferPrice(packagesDTO.getPromotional_offer_price());
+        packages.setImageUrl(packagesDTO.getImageUrl());
+        packages.setPromotionalOffer(packagesDTO.getPromotionalOffer());
+        packages.setPromotionalOfferPrice(packagesDTO.getPromotionalOfferPrice());
+        packages.setFeatured(packagesDTO.getFeatured());
         return packages;
     }
 
