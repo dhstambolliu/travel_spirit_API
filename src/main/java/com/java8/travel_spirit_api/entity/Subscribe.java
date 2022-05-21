@@ -17,5 +17,5 @@ public class Subscribe {
     @Column(name = "id", nullable = false)
     private Long id;
     private String email;
-    private Boolean is_active;
+    private Boolean active;
 }

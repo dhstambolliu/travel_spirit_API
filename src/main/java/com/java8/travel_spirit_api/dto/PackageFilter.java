@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PackageFilter {
-    protected String cityId;
+    protected Long cityId;
     protected String packageName;
 }

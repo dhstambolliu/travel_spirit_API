@@ -31,7 +31,7 @@ public class SubscribeServiceImpl implements SubscribeService {
         SubscribeDTO subscribeDTO = new SubscribeDTO();
         subscribeDTO.setId(subscribe.getId());
         subscribeDTO.setEmail(subscribe.getEmail());
-        subscribeDTO.setIs_active(subscribe.getIs_active());
+        subscribeDTO.setIs_active(subscribe.getActive());
         return subscribeDTO;
     }
 
@@ -39,7 +39,7 @@ public class SubscribeServiceImpl implements SubscribeService {
         Subscribe subscribe = new Subscribe();
         subscribe.setId(subscribeDTO.getId());
         subscribe.setEmail(subscribeDTO.getEmail());
-        subscribe.setIs_active(subscribeDTO.getIs_active());
+        subscribe.setActive(subscribeDTO.getIs_active());
         return subscribe;
     }
 }

@@ -19,7 +19,7 @@ public class Users {
     private String name;
     private String surname;
     private String email;
-    private String phone_number;
+    private String phone;
     private String username;
     private String password;
 }

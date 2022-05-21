@@ -17,8 +17,18 @@ public class Rating {
     @Column(name = "id", nullable = false)
     private Long id;
     private int rating;
+
+    @Column(name = "user_id")
+    protected Long userId;
+
+    @Column(name = "package_id")
+    protected Long packageId;
+
     @ManyToOne
-    private Users users_id;
+    @JoinColumn(name = "user_id", insertable = false, updatable=false)
+    private Users user;
+
     @ManyToOne
-    private Packages packages_id;
+    @JoinColumn(name = "package_id", insertable = false, updatable=false)
+    private Packages packages;
 }

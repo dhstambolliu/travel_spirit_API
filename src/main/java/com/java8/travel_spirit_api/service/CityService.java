@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface CityService {
     List<CityDTO> getCityByName(String name);
+    List<CityDTO> getForSelect();
 }

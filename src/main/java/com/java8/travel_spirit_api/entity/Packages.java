@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity(name = "packages_entity")
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Table(name = "packages_entity")
 public class Packages {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,11 +20,19 @@ public class Packages {
     private Double price;
     private String description;
     private int duration;
-    private Boolean promotional_offer;
-    private Double promotional_offer_price;
-    private Boolean is_featured;
-    private String image_url;
-    private Boolean is_active;
+    @Column(name = "promotional_offer")
+    private Boolean promotionalOffer;
+    @Column(name = "promotional_offer_price")
+    private Double promotionalOfferPrice;
+    private Boolean featured;
+    @Column(name = "image_url")
+    private String imageUrl;
+    private Boolean active;
+
+    @Column(name = "city_id")
+    private Long cityId;
+
     @ManyToOne
-    private City city_id;
+    @JoinColumn(name = "city_id", updatable = false, insertable = false)
+    private City city;
 }

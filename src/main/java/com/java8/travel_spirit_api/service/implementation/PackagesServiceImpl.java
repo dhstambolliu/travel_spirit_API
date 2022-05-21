@@ -1,11 +1,12 @@
 package com.java8.travel_spirit_api.service.implementation;
 
+import com.java8.travel_spirit_api.dto.PackageFilter;
 import com.java8.travel_spirit_api.dto.PackagesDTO;
-import com.java8.travel_spirit_api.entity.City;
 import com.java8.travel_spirit_api.entity.Packages;
 import com.java8.travel_spirit_api.repository.PackagesRepository;
 import com.java8.travel_spirit_api.service.PackagesService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +14,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class PackagesServiceImpl implements PackagesService {
-
-    @Autowired
-    private PackagesRepository packagesRepository;
-
+    protected PackagesRepository packagesRepository;
 
     private PackagesDTO mapPackagesToDTO(Packages packages) {
         PackagesDTO packagesDTO = new PackagesDTO();
@@ -25,11 +24,11 @@ public class PackagesServiceImpl implements PackagesService {
         packagesDTO.setName(packages.getName());
         packagesDTO.setDescription(packages.getDescription());
         packagesDTO.setDuration(packages.getDuration());
-        packagesDTO.setIs_active(packages.getIs_active());
+        packagesDTO.setIs_active(packages.getActive());
         packagesDTO.setPrice(packages.getPrice());
-        packagesDTO.setImage_url(packages.getImage_url());
-        packagesDTO.setPromotional_offer(packages.getPromotional_offer());
-        packagesDTO.setPromotional_offer_price(packages.getPromotional_offer_price());
+        packagesDTO.setImage_url(packages.getImageUrl());
+        packagesDTO.setPromotional_offer(packages.getPromotionalOffer());
+        packagesDTO.setPromotional_offer_price(packages.getPromotionalOfferPrice());
         return packagesDTO;
     }
 
@@ -39,11 +38,11 @@ public class PackagesServiceImpl implements PackagesService {
         packages.setName(packagesDTO.getName());
         packages.setDescription(packagesDTO.getDescription());
         packages.setDuration(packagesDTO.getDuration());
-        packages.setIs_active(packagesDTO.getIs_active());
+        packages.setActive(packagesDTO.getIs_active());
         packages.setPrice(packagesDTO.getPrice());
-        packages.setImage_url(packagesDTO.getImage_url());
-        packages.setPromotional_offer(packagesDTO.getPromotional_offer());
-        packages.setPromotional_offer_price(packagesDTO.getPromotional_offer_price());
+        packages.setImageUrl(packagesDTO.getImage_url());
+        packages.setPromotionalOffer(packagesDTO.getPromotional_offer());
+        packages.setPromotionalOfferPrice(packagesDTO.getPromotional_offer_price());
         return packages;
     }
 
@@ -72,7 +71,8 @@ public class PackagesServiceImpl implements PackagesService {
     }
 
     @Override
-    public ResponseEntity<String> search() {
-        return packagesRepository.filter();
+    public ResponseEntity<List<Packages>> search(PackageFilter filter) {
+
+        return new ResponseEntity(packagesRepository.search(filter.getCityId(), filter.getPackageName()), HttpStatus.OK);
     }
 }

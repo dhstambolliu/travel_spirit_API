@@ -20,16 +20,16 @@ public class ReservationServiceImpl implements ReservationService {
     private ReservationDTO mapReservationToDTO(Reservation reservation) {
         ReservationDTO reservationDTO = new ReservationDTO();
         reservationDTO.setId(reservation.getId());
-        reservationDTO.setReservation_date(reservation.getReservation_date());
-        reservationDTO.setNumber_of_persons(reservation.getNumber_of_persons());
+        reservationDTO.setReservation_date(reservation.getReservationDate());
+        reservationDTO.setNumber_of_persons(reservation.getPeople());
         return reservationDTO;
     }
 
     private Reservation mapDTOToReservation(ReservationDTO reservationDTO) {
         Reservation reservation = new Reservation();
         reservation.setId(reservationDTO.getId());
-        reservation.setReservation_date(reservationDTO.getReservation_date());
-        reservation.setNumber_of_persons(reservationDTO.getNumber_of_persons());
+        reservation.setReservationDate(reservationDTO.getReservation_date());
+        reservation.setPeople(reservationDTO.getNumber_of_persons());
         return reservation;
     }
 

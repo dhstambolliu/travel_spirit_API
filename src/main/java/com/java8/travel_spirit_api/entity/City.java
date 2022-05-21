@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity(name = "city_entity")
 @Data
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Table(name = "city_entity")
 public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
