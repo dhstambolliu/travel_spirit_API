@@ -1,12 +1,12 @@
 package com.java8.travel_spirit_api.service.implementation;
 
 import com.java8.travel_spirit_api.dto.PackagesDTO;
+import com.java8.travel_spirit_api.entity.City;
 import com.java8.travel_spirit_api.entity.Packages;
-import com.java8.travel_spirit_api.entity.Reservation;
-import com.java8.travel_spirit_api.entity.Subscribe;
 import com.java8.travel_spirit_api.repository.PackagesRepository;
 import com.java8.travel_spirit_api.service.PackagesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -63,5 +63,16 @@ public class PackagesServiceImpl implements PackagesService {
     public List<PackagesDTO> getPackages() {
         List<Packages> packages = packagesRepository.findAll();
         return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<PackagesDTO> getPackageByName(String name) {
+        List<Packages> packages = packagesRepository.getByName(name);
+        return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
+    }
+
+    @Override
+    public ResponseEntity<String> search() {
+        return packagesRepository.filter();
     }
 }
