@@ -22,6 +22,7 @@ public class Packages {
     private int duration;
     private Boolean promotional_offer;
     private Double promotional_offer_price;
+    private Boolean is_featured;
     private String image_url;
     private Boolean is_active;
     @ManyToOne
