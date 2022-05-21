@@ -2,6 +2,7 @@ package com.java8.travel_spirit_api.service.implementation;
 
 import com.java8.travel_spirit_api.dto.PackagesDTO;
 import com.java8.travel_spirit_api.entity.Packages;
+import com.java8.travel_spirit_api.entity.Reservation;
 import com.java8.travel_spirit_api.entity.Subscribe;
 import com.java8.travel_spirit_api.repository.PackagesRepository;
 import com.java8.travel_spirit_api.service.PackagesService;
@@ -49,6 +50,18 @@ public class PackagesServiceImpl implements PackagesService {
     @Override
     public List<PackagesDTO> getPromotionalOffers() {
         List<Packages> packages = packagesRepository.findPromotionalOffer();
+        return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
+    }
+
+    @Override
+    public void addPackages(PackagesDTO packagesDTO) {
+        Packages packages = mapDTOToPackages(packagesDTO);
+        packagesRepository.save(packages);
+    }
+
+    @Override
+    public List<PackagesDTO> getPackages() {
+        List<Packages> packages = packagesRepository.findAll();
         return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
     }
 }

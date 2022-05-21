@@ -7,6 +7,9 @@ import com.java8.travel_spirit_api.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ReservationServiceImpl implements ReservationService {
 
@@ -28,5 +31,17 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setReservation_date(reservationDTO.getReservation_date());
         reservation.setNumber_of_persons(reservationDTO.getNumber_of_persons());
         return reservation;
+    }
+
+    @Override
+    public void addReservation(ReservationDTO reservationDTO) {
+        Reservation reservation = mapDTOToReservation(reservationDTO);
+        reservationRepository.save(reservation);
+    }
+
+    @Override
+    public List<ReservationDTO> getReservations() {
+        List<Reservation> reservations = reservationRepository.findAll();
+        return reservations.stream().map(reservation -> mapReservationToDTO(reservation)).collect(Collectors.toList());
     }
 }

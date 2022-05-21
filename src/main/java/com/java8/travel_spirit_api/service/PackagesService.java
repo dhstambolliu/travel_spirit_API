@@ -6,4 +6,8 @@ import java.util.List;
 
 public interface PackagesService {
     List<PackagesDTO> getPromotionalOffers();
+
+    void addPackages(PackagesDTO packagesDTO);
+
+    List<PackagesDTO> getPackages();
 }
