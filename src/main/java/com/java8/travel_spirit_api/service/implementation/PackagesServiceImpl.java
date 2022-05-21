@@ -2,10 +2,14 @@ package com.java8.travel_spirit_api.service.implementation;
 
 import com.java8.travel_spirit_api.dto.PackagesDTO;
 import com.java8.travel_spirit_api.entity.Packages;
+import com.java8.travel_spirit_api.entity.Subscribe;
 import com.java8.travel_spirit_api.repository.PackagesRepository;
 import com.java8.travel_spirit_api.service.PackagesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PackagesServiceImpl implements PackagesService {
@@ -40,5 +44,11 @@ public class PackagesServiceImpl implements PackagesService {
         packages.setPromotional_offer(packagesDTO.getPromotional_offer());
         packages.setPromotional_offer_price(packagesDTO.getPromotional_offer_price());
         return packages;
+    }
+
+    @Override
+    public List<PackagesDTO> getPromotionalOffers() {
+        List<Packages> packages = packagesRepository.findPromotionalOffer();
+        return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
     }
 }

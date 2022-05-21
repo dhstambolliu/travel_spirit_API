@@ -7,6 +7,9 @@ import com.java8.travel_spirit_api.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class CityServiceImpl implements CityService {
 
@@ -30,5 +33,11 @@ public class CityServiceImpl implements CityService {
         city.setCountry(cityDTO.getCountry());
         city.setContinent(cityDTO.getContinent());
         return city;
+    }
+
+    @Override
+    public List<CityDTO> getCityByName(String name) {
+        List<City> cities = cityRepository.getByName(name);
+        return cities.stream().map(city -> mapCityToDTO(city)).collect(Collectors.toList());
     }
 }
