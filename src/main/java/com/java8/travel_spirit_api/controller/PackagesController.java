@@ -18,9 +18,14 @@ public class PackagesController {
         return packagesService.getPackages();
     }
 
-    @GetMapping("/carousel")
+    @GetMapping("promotional-offers")
     public List<PackagesDTO> getPromotionalOffers() {
         return packagesService.getPromotionalOffers();
+    }
+
+    @GetMapping("/carousel")
+    public List<PackagesDTO> getFeaturedOffers() {
+        return packagesService.getFeaturedOffers();
     }
 
     @PostMapping("/add")

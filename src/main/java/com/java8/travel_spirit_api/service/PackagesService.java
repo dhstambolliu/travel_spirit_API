@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface PackagesService {
-    List<PackagesDTO> getPromotionalOffers();
+    List<PackagesDTO> getFeaturedOffers();
 
     void addPackages(PackagesDTO packagesDTO);
 
@@ -17,4 +17,6 @@ public interface PackagesService {
     List<PackagesDTO> getPackageByName(String name);
 
     ResponseEntity<List<Packages>> search(PackageFilter filter);
+
+    List<PackagesDTO> getPromotionalOffers();
 }

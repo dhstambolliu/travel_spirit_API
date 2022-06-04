@@ -49,8 +49,8 @@ public class PackagesServiceImpl implements PackagesService {
     }
 
     @Override
-    public List<PackagesDTO> getPromotionalOffers() {
-        List<Packages> packages = packagesRepository.findPromotionalOffer();
+    public List<PackagesDTO> getFeaturedOffers() {
+        List<Packages> packages = packagesRepository.findFeaturedOffers();
         return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
     }
 
@@ -76,5 +76,11 @@ public class PackagesServiceImpl implements PackagesService {
     public ResponseEntity<List<Packages>> search(PackageFilter filter) {
 
         return new ResponseEntity(packagesRepository.search(filter.getCityId(), filter.getPackageName()), HttpStatus.OK);
+    }
+
+    @Override
+    public List<PackagesDTO> getPromotionalOffers() {
+        List<Packages> packages = packagesRepository.findPromotionalOffers();
+        return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
     }
 }
