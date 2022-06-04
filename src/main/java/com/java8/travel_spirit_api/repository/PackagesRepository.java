@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface PackagesRepository extends JpaRepository<Packages, Long> {
-    @Query("SELECT p FROM Packages p WHERE p.promotionalOffer = false")
+    @Query("SELECT p FROM Packages p WHERE p.featured = true")
     List<Packages> findPromotionalOffer();
 
     @Query("SELECT p FROM Packages p WHERE p.name = :name")
