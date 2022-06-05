@@ -20,5 +20,5 @@ public interface PackagesService {
 
     List<PackagesDTO> getPromotionalOffers();
 
-    List<PackagesDTO> getDestinations();
+    List<PackagesDTO> getDestinations(PackageFilter dto);
 }

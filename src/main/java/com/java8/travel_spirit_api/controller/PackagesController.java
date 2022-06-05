@@ -1,5 +1,6 @@
 package com.java8.travel_spirit_api.controller;
 
+import com.java8.travel_spirit_api.dto.PackageFilter;
 import com.java8.travel_spirit_api.dto.PackagesDTO;
 import com.java8.travel_spirit_api.service.PackagesService;
 import lombok.AllArgsConstructor;
@@ -28,9 +29,9 @@ public class PackagesController {
         return packagesService.getFeaturedOffers();
     }
 
-    @GetMapping("/destinations")
-    public List<PackagesDTO> getDestinations() {
-        return packagesService.getDestinations();
+    @PostMapping("/destinations")
+    public List<PackagesDTO> getDestinations(@RequestBody PackageFilter dto) {
+        return packagesService.getDestinations(dto);
     }
 
     @PostMapping("/add")

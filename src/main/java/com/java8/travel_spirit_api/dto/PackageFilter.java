@@ -8,4 +8,5 @@ import lombok.Setter;
 public class PackageFilter {
     protected Long cityId;
     protected String packageName;
+    protected String query;
 }

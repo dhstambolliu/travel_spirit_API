@@ -85,8 +85,8 @@ public class PackagesServiceImpl implements PackagesService {
     }
 
     @Override
-    public List<PackagesDTO> getDestinations() {
-        List<Packages> packages = packagesRepository.getDestinations();
+    public List<PackagesDTO> getDestinations(PackageFilter dto) {
+        List<Packages> packages = packagesRepository.getDestinations(dto.getQuery());
         return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
     }
 }
