@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface PackagesRepository extends JpaRepository<Packages, Long> {
-    @Query("SELECT p FROM Packages p WHERE p.featured = true")
+    @Query("SELECT p FROM Packages p WHERE p.featured = true and p.active = true")
     List<Packages> findFeaturedOffers();
 
     @Query("SELECT p FROM Packages p WHERE p.name = :name")
@@ -18,8 +18,11 @@ public interface PackagesRepository extends JpaRepository<Packages, Long> {
     @Query("SELECT p FROM Packages p WHERE (:packageName is not null and p.name like %:packageName%) or (:cityId is not null and p.cityId = :cityId) ")
     List<Packages> search(Long cityId, String packageName);
 
-    @Query("SELECT p FROM Packages p WHERE p.promotionalOffer = true")
+    @Query("SELECT p FROM Packages p WHERE p.promotionalOffer = true and p.active = true")
     List<Packages> findPromotionalOffers();
+
+    @Query("SELECT p FROM Packages p where p.active = true")
+    List<Packages> getDestinations();
 
     /*@Query("SELECT packages_entity.name, city_entity.name FROM packages_entity p INNER JOIN packages_entity on packages_entity.city = city_entity .name")
     ResponseEntity<String> filter();*/

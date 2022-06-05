@@ -28,6 +28,11 @@ public class PackagesController {
         return packagesService.getFeaturedOffers();
     }
 
+    @GetMapping("/destinations")
+    public List<PackagesDTO> getDestinations() {
+        return packagesService.getDestinations();
+    }
+
     @PostMapping("/add")
     public void addPackage(@RequestBody PackagesDTO packagesDTO) {
         packagesService.addPackages(packagesDTO);

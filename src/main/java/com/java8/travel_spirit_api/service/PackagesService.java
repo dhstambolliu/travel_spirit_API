@@ -19,4 +19,6 @@ public interface PackagesService {
     ResponseEntity<List<Packages>> search(PackageFilter filter);
 
     List<PackagesDTO> getPromotionalOffers();
+
+    List<PackagesDTO> getDestinations();
 }

@@ -83,4 +83,10 @@ public class PackagesServiceImpl implements PackagesService {
         List<Packages> packages = packagesRepository.findPromotionalOffers();
         return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
     }
+
+    @Override
+    public List<PackagesDTO> getDestinations() {
+        List<Packages> packages = packagesRepository.getDestinations();
+        return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
+    }
 }
