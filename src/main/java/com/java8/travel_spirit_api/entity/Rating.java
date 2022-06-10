@@ -13,8 +13,7 @@ import javax.persistence.*;
 
 public class Rating {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int rating;
 

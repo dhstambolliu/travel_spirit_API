@@ -21,4 +21,6 @@ public interface PackagesService {
     List<PackagesDTO> getPromotionalOffers();
 
     List<PackagesDTO> getDestinations(PackageFilter dto);
+
+    List<PackagesDTO> getBookingPackage(Long id);
 }

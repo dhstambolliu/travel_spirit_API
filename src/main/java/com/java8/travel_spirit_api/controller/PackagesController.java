@@ -19,7 +19,7 @@ public class PackagesController {
         return packagesService.getPackages();
     }
 
-    @GetMapping("promotional-offers")
+    @GetMapping("/promotional-offers")
     public List<PackagesDTO> getPromotionalOffers() {
         return packagesService.getPromotionalOffers();
     }
@@ -29,6 +29,11 @@ public class PackagesController {
         return packagesService.getFeaturedOffers();
     }
 
+    @GetMapping("/booking/{id}")
+    public List<PackagesDTO> getBookingPackage(@PathVariable("id") Long id) {
+        return packagesService.getBookingPackage(id);
+    }
+
     @PostMapping("/destinations")
     public List<PackagesDTO> getDestinations(@RequestBody PackageFilter dto) {
         return packagesService.getDestinations(dto);
@@ -36,6 +41,7 @@ public class PackagesController {
 
     @PostMapping("/add")
     public void addPackage(@RequestBody PackagesDTO packagesDTO) {
+
         packagesService.addPackages(packagesDTO);
     }
 }

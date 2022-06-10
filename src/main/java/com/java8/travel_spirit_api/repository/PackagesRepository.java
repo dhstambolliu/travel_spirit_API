@@ -21,8 +21,10 @@ public interface PackagesRepository extends JpaRepository<Packages, Long> {
     @Query("SELECT p FROM Packages p WHERE p.promotionalOffer = true and p.active = true")
     List<Packages> findPromotionalOffers();
 
-    @Query("SELECT p FROM Packages p where p.active = true and (:query is null or p.name like %:query%)")
+    @Query("SELECT p FROM Packages p where p.active = true and p.promotionalOffer = false and (:query is null or p.name like %:query%)")
     List<Packages> getDestinations(String query);
 
+    @Query("SELECT p FROM Packages p where p.id=:id")
+    List<Packages> getBookingPackage(Long id);
 }
 

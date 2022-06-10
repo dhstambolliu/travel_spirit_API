@@ -13,8 +13,7 @@ import javax.persistence.*;
 @Table(name = "packages")
 public class Packages {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Double price;

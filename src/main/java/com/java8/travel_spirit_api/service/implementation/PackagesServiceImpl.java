@@ -89,4 +89,10 @@ public class PackagesServiceImpl implements PackagesService {
         List<Packages> packages = packagesRepository.getDestinations(dto.getQuery());
         return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
     }
+
+    @Override
+    public List<PackagesDTO> getBookingPackage(Long id) {
+        List<Packages> packages = packagesRepository.getBookingPackage(id);
+        return packages.stream().map(packg -> mapPackagesToDTO(packg)).collect(Collectors.toList());
+    }
 }
