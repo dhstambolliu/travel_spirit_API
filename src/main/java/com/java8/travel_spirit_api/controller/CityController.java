@@ -18,7 +18,6 @@ public class CityController {
 
     @PostMapping("/add")
     public void addCity(@RequestBody City city) {
-
         cityService.addCity(city);
     }
 
