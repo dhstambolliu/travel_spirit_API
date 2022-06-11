@@ -3,6 +3,7 @@ package com.java8.travel_spirit_api.controller;
 import com.java8.travel_spirit_api.dto.PackageFilter;
 import com.java8.travel_spirit_api.dto.PackagesDTO;
 import com.java8.travel_spirit_api.service.PackagesService;
+import com.java8.travel_spirit_api.utils.ServiceResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,8 +41,8 @@ public class PackagesController {
     }
 
     @PostMapping("/add")
-    public void addPackage(@RequestBody PackagesDTO packagesDTO) {
+    public ServiceResponse addPackage(@RequestBody PackagesDTO packagesDTO) {
 
-        packagesService.addPackages(packagesDTO);
+        return packagesService.addPackages(packagesDTO);
     }
 }

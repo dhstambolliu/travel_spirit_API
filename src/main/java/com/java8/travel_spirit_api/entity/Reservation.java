@@ -21,10 +21,9 @@ public class Reservation {
     private Date reservationDate;
 
     private int people;
-
-
-    @Column(name = "user_id")
-    protected Long userId;
+    private String name;
+    private String surname;
+    private String email;
 
     @Column(name = "package_id")
     protected Long packageId;

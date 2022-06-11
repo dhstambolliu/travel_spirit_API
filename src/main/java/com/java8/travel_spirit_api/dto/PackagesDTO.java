@@ -14,4 +14,5 @@ public class PackagesDTO {
     private String imageUrl;
     private Boolean active;
     private Boolean featured;
+    private Long cityId;
 }

@@ -2,10 +2,14 @@ package com.java8.travel_spirit_api.service.implementation;
 
 import com.java8.travel_spirit_api.dto.PackageFilter;
 import com.java8.travel_spirit_api.dto.PackagesDTO;
+import com.java8.travel_spirit_api.entity.City;
 import com.java8.travel_spirit_api.entity.Packages;
+import com.java8.travel_spirit_api.repository.CityRepository;
 import com.java8.travel_spirit_api.repository.PackagesRepository;
 import com.java8.travel_spirit_api.service.PackagesService;
+import com.java8.travel_spirit_api.utils.ServiceResponse;
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,6 +21,8 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class PackagesServiceImpl implements PackagesService {
     protected PackagesRepository packagesRepository;
+
+    protected CityRepository cityRepository;
 
     private PackagesDTO mapPackagesToDTO(Packages packages) {
         PackagesDTO packagesDTO = new PackagesDTO();
@@ -30,6 +36,7 @@ public class PackagesServiceImpl implements PackagesService {
         packagesDTO.setPromotionalOffer(packages.getPromotionalOffer());
         packagesDTO.setPromotionalOfferPrice(packages.getPromotionalOfferPrice());
         packagesDTO.setFeatured(packages.getFeatured());
+        packagesDTO.setCityId(packages.getCityId());
         return packagesDTO;
     }
 
@@ -45,6 +52,7 @@ public class PackagesServiceImpl implements PackagesService {
         packages.setPromotionalOffer(packagesDTO.getPromotionalOffer());
         packages.setPromotionalOfferPrice(packagesDTO.getPromotionalOfferPrice());
         packages.setFeatured(packagesDTO.getFeatured());
+        packages.setCityId(packagesDTO.getCityId());
         return packages;
     }
 
@@ -55,9 +63,29 @@ public class PackagesServiceImpl implements PackagesService {
     }
 
     @Override
-    public void addPackages(PackagesDTO packagesDTO) {
+    public ServiceResponse addPackages(PackagesDTO packagesDTO) {
+        if (packagesDTO == null)
+            return ServiceResponse.error("Provide the package data");
+
+        if (StringUtils.isAllBlank(packagesDTO.getName()))
+            return ServiceResponse.error("Provide a valid Name");
+
+        if (packagesDTO.getCityId() == null)
+            return ServiceResponse.error("Provide a valid City");
+
+        if (StringUtils.isAllBlank(packagesDTO.getDescription()))
+            return ServiceResponse.error("Provide a valid Description");
+
+        if (StringUtils.isAllBlank(packagesDTO.getImageUrl()))
+            return ServiceResponse.error("Provide a valid Image Url");
+
+        City dbCity = cityRepository.getById(packagesDTO.getCityId());
+        if (dbCity == null)
+            return ServiceResponse.error("City not found in database");
+
         Packages packages = mapDTOToPackages(packagesDTO);
         packagesRepository.save(packages);
+        return ServiceResponse.success();
     }
 
     @Override
