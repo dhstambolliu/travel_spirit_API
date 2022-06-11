@@ -1,10 +1,13 @@
 package com.java8.travel_spirit_api.service.implementation;
 
 import com.java8.travel_spirit_api.dto.ReservationDTO;
+import com.java8.travel_spirit_api.entity.City;
 import com.java8.travel_spirit_api.entity.Reservation;
 import com.java8.travel_spirit_api.repository.ReservationRepository;
 import com.java8.travel_spirit_api.service.ReservationService;
+import com.java8.travel_spirit_api.utils.ServiceResponse;
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -43,9 +46,38 @@ public class ReservationServiceImpl implements ReservationService {
     }
 
     @Override
-    public void addReservation(ReservationDTO reservationDTO) {
+    public ServiceResponse addReservation(ReservationDTO reservationDTO) {
+
+        if (reservationDTO == null)
+            return ServiceResponse.error("Provide the reservation data");
+
+        if (StringUtils.isAllBlank(reservationDTO.getName()))
+            return ServiceResponse.error("Provide a valid Name");
+
+        if (StringUtils.isAllBlank(reservationDTO.getSurname()))
+            return ServiceResponse.error("Provide a valid Surname");
+
+        if (StringUtils.isAllBlank(reservationDTO.getEmail()))
+            return ServiceResponse.error("Provide a valid Email");
+
+        if (reservationDTO.getPeople() < 1) {
+            return ServiceResponse.error("Select number of people");
+        }
+
+        if (StringUtils.isAllBlank((CharSequence) reservationDTO.getReservationDate()))
+            return ServiceResponse.error("Select a Starting Date");
+
+        if (StringUtils.isAllBlank(reservationDTO.getContact()))
+            return ServiceResponse.error("Provide a valid Contact Number");
+
+
+        Reservation dbReservation = reservationRepository.getById(reservationDTO.getPackageId());
+        if (dbReservation == null)
+            return ServiceResponse.error("Package not found in database");
+
         Reservation reservation = mapDTOToReservation(reservationDTO);
         reservationRepository.save(reservation);
+        return ServiceResponse.success();
     }
 
     @Override
