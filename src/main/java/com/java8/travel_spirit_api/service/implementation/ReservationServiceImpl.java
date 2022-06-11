@@ -21,6 +21,11 @@ public class ReservationServiceImpl implements ReservationService {
         reservationDTO.setId(reservation.getId());
         reservationDTO.setReservationDate(reservation.getReservationDate());
         reservationDTO.setPeople(reservation.getPeople());
+        reservationDTO.setContact(reservation.getContact());
+        reservationDTO.setName(reservation.getName());
+        reservationDTO.setSurname(reservation.getSurname());
+        reservationDTO.setEmail(reservation.getEmail());
+        reservationDTO.setPackageId(reservation.getPackageId());
         return reservationDTO;
     }
 
@@ -29,6 +34,11 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setId(reservationDTO.getId());
         reservation.setReservationDate(reservationDTO.getReservationDate());
         reservation.setPeople(reservationDTO.getPeople());
+        reservation.setContact(reservationDTO.getContact());
+        reservation.setName(reservationDTO.getName());
+        reservation.setSurname(reservationDTO.getSurname());
+        reservation.setEmail(reservationDTO.getEmail());
+        reservation.setPackageId(reservationDTO.getPackageId());
         return reservation;
     }
 

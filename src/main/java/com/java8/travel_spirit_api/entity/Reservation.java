@@ -24,13 +24,11 @@ public class Reservation {
     private String name;
     private String surname;
     private String email;
+    private String contact;
 
     @Column(name = "package_id")
     protected Long packageId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", insertable = false, updatable=false)
-    private Users user;
 
     @ManyToOne
     @JoinColumn(name = "package_id", insertable = false, updatable=false)

@@ -9,4 +9,9 @@ public class ReservationDTO {
     private Long id;
     private Date reservationDate;
     private int people;
+    private String name;
+    private String surname;
+    private String email;
+    private String contact;
+    protected Long packageId;
 }
