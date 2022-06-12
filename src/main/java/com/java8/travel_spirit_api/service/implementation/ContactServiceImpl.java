@@ -4,7 +4,9 @@ import com.java8.travel_spirit_api.dto.ContactDTO;
 import com.java8.travel_spirit_api.entity.Contact;
 import com.java8.travel_spirit_api.repository.ContactRepository;
 import com.java8.travel_spirit_api.service.ContactService;
+import com.java8.travel_spirit_api.utils.ServiceResponse;
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -29,14 +31,22 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public void addPackages(ContactDTO contactDTO) {
-        Contact contact = mapDTOToContacts(contactDTO);
-        contactRepository.save(contact);
-    }
+    public ServiceResponse addContact(ContactDTO contactDTO) {
 
-    @Override
-    public void addContact(ContactDTO contactDTO) {
+        if (contactDTO == null)
+            return ServiceResponse.error("Provide the info data");
+
+        if (StringUtils.isAllBlank(contactDTO.getFullName()))
+            return ServiceResponse.error("Provide a valid Name");
+
+        if (StringUtils.isAllBlank(contactDTO.getEmail()))
+            return ServiceResponse.error("Provide a valid email");
+
+        if (StringUtils.isAllBlank(contactDTO.getSubject()))
+            return ServiceResponse.error("Provide a valid subject");
+
         Contact contact = mapDTOToContacts(contactDTO);
         contactRepository.save(contact);
+        return ServiceResponse.success();
     }
 }

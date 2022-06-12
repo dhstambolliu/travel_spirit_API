@@ -2,6 +2,7 @@ package com.java8.travel_spirit_api.controller;
 
 import com.java8.travel_spirit_api.dto.ContactDTO;
 import com.java8.travel_spirit_api.service.ContactService;
+import com.java8.travel_spirit_api.utils.ServiceResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +17,7 @@ public class ContactController{
     protected ContactService contactService;
 
     @PostMapping("/add")
-    public void addContact(@RequestBody ContactDTO contactDTO) {
-        contactService.addContact(contactDTO);
+    public ServiceResponse addContact(@RequestBody ContactDTO contactDTO) {
+        return contactService.addContact(contactDTO);
     }
 }
