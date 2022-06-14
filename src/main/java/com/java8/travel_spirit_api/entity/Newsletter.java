@@ -6,12 +6,12 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity(name = "subscribe")
+@Entity(name = "newsletter")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Subscribe {
+public class Newsletter {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
