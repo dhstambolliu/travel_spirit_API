@@ -24,21 +24,17 @@ New features will come soon as well.
 
 ![image](https://user-images.githubusercontent.com/17814752/173778468-c3f00902-815c-4c0a-aa21-d6b615109d71.png)
 
-![image](https://user-images.githubusercontent.com/17814752/173955222-5a95b32b-5d3e-4ace-8bc7-a449ce32bc41.png)
+![image](https://user-images.githubusercontent.com/17814752/173957800-aebac6a3-3689-40cd-8a5d-a5a39aa518c0.png)
+![image](https://user-images.githubusercontent.com/17814752/173957819-d5de9035-f254-4ab4-9390-11fa4b1a6344.png)
+![image](https://user-images.githubusercontent.com/17814752/173957851-318e2061-5e45-4d33-a5a0-82885c6e1e6a.png)
+![image](https://user-images.githubusercontent.com/17814752/173957895-3535cb89-71d6-4fdc-8428-34f931245aa0.png)
+![image](https://user-images.githubusercontent.com/17814752/173957934-23b2e173-1888-4ec8-87be-c82f20f53fe0.png)
+![image](https://user-images.githubusercontent.com/17814752/173958003-c150c398-ffbb-44a8-98b4-14502c276bc9.png)
+![image](https://user-images.githubusercontent.com/17814752/173958084-67b569e4-5b51-40fb-b4cd-62bebef323d0.png)
+![image](https://user-images.githubusercontent.com/17814752/173958118-f91a8593-94ba-4b41-a8ad-a364b43754bd.png)
+![image](https://user-images.githubusercontent.com/17814752/173958131-58ac364a-1778-4da2-b5c3-9e18006130a7.png)
+![image](https://user-images.githubusercontent.com/17814752/173958279-c6b44e46-47a2-4447-8d5d-e617a5ec405e.png)
 
-![image](https://user-images.githubusercontent.com/17814752/173955319-231cdcc9-74d6-419c-a173-dd8f6260dae5.png)
-
-![image](https://user-images.githubusercontent.com/17814752/173955738-4e907095-255e-4e54-9fdf-74489813e3d8.png)
-
-![image](https://user-images.githubusercontent.com/17814752/173955474-f1778121-079e-42b8-b219-41bdf83b944c.png)
-
-![image](https://user-images.githubusercontent.com/17814752/173955598-dd01b8aa-6487-4ece-bda3-c677211ef84c.png)
-
-![image](https://user-images.githubusercontent.com/17814752/173955819-766e7e03-282f-4610-a3b8-81f06d53fb16.png)
-
-![image](https://user-images.githubusercontent.com/17814752/173955859-d2fe04ba-e3a5-430b-82d9-b81a74f4ad13.png)
-
-![image](https://user-images.githubusercontent.com/17814752/173955879-35924dbb-4d96-4b45-aef9-78046fc7466d.png)
 
 
 
