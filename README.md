@@ -19,5 +19,6 @@ so it can be private and accessed only from authorized people.
 
 <h1>Diagram</h1>
 
-![image](https://user-images.githubusercontent.com/17814752/173776909-fd73219f-6926-4c16-bf78-47ef509c1fd2.png)
+![image](https://user-images.githubusercontent.com/17814752/173778468-c3f00902-815c-4c0a-aa21-d6b615109d71.png)
+
 
