@@ -15,3 +15,8 @@ Project consist of a travel agency where Customers can:
 
 Is also created an API to create new packages so they can be displayed to the offers. Remains open to be fixed for implementing Spring Security
 so it can be private and accessed only from authorized people.
+
+
+<h1>Diagram</h1>
+
+![image](https://user-images.githubusercontent.com/17814752/173772200-5e1e418b-bf30-4e26-8369-2a6e36088fd7.png)
