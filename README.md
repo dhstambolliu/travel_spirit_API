@@ -26,17 +26,45 @@ New features will come soon as well.
 
 <h1>Pages</h1>
 
-![image](https://user-images.githubusercontent.com/17814752/173957800-aebac6a3-3689-40cd-8a5d-a5a39aa518c0.png)
-![image](https://user-images.githubusercontent.com/17814752/173957819-d5de9035-f254-4ab4-9390-11fa4b1a6344.png)
-![image](https://user-images.githubusercontent.com/17814752/173957851-318e2061-5e45-4d33-a5a0-82885c6e1e6a.png)
-![image](https://user-images.githubusercontent.com/17814752/173957895-3535cb89-71d6-4fdc-8428-34f931245aa0.png)
-![image](https://user-images.githubusercontent.com/17814752/173957934-23b2e173-1888-4ec8-87be-c82f20f53fe0.png)
-![image](https://user-images.githubusercontent.com/17814752/173958003-c150c398-ffbb-44a8-98b4-14502c276bc9.png)
-![image](https://user-images.githubusercontent.com/17814752/173958084-67b569e4-5b51-40fb-b4cd-62bebef323d0.png)
-![image](https://user-images.githubusercontent.com/17814752/173958118-f91a8593-94ba-4b41-a8ad-a364b43754bd.png)
-![image](https://user-images.githubusercontent.com/17814752/173958131-58ac364a-1778-4da2-b5c3-9e18006130a7.png)
-![image](https://user-images.githubusercontent.com/17814752/173958279-c6b44e46-47a2-4447-8d5d-e617a5ec405e.png)
+## Carousel
 
+![image](https://user-images.githubusercontent.com/17814752/173957800-aebac6a3-3689-40cd-8a5d-a5a39aa518c0.png)
+
+## Packages on promotion
+
+![image](https://user-images.githubusercontent.com/17814752/173957819-d5de9035-f254-4ab4-9390-11fa4b1a6344.png)
+
+## All destinations
+
+![image](https://user-images.githubusercontent.com/17814752/173957851-318e2061-5e45-4d33-a5a0-82885c6e1e6a.png)
+
+## Booking form
+
+![image](https://user-images.githubusercontent.com/17814752/173957895-3535cb89-71d6-4fdc-8428-34f931245aa0.png)
+
+## Search for a package
+
+![image](https://user-images.githubusercontent.com/17814752/173957934-23b2e173-1888-4ec8-87be-c82f20f53fe0.png)
+
+## Create a new city and package
+
+![image](https://user-images.githubusercontent.com/17814752/173958003-c150c398-ffbb-44a8-98b4-14502c276bc9.png)
+
+## Subscribe to newsletter
+
+![image](https://user-images.githubusercontent.com/17814752/173958084-67b569e4-5b51-40fb-b4cd-62bebef323d0.png)
+
+## Contact us page
+
+![image](https://user-images.githubusercontent.com/17814752/173958118-f91a8593-94ba-4b41-a8ad-a364b43754bd.png)
+
+## About us page
+
+![image](https://user-images.githubusercontent.com/17814752/173958131-58ac364a-1778-4da2-b5c3-9e18006130a7.png)
+
+## Error 404 for pages not found
+
+![image](https://user-images.githubusercontent.com/17814752/173958279-c6b44e46-47a2-4447-8d5d-e617a5ec405e.png)
 
 
 
