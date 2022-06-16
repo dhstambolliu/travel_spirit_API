@@ -24,6 +24,8 @@ New features will come soon as well.
 
 ![image](https://user-images.githubusercontent.com/17814752/173778468-c3f00902-815c-4c0a-aa21-d6b615109d71.png)
 
+<h1>Pages</h1>
+
 ![image](https://user-images.githubusercontent.com/17814752/173957800-aebac6a3-3689-40cd-8a5d-a5a39aa518c0.png)
 ![image](https://user-images.githubusercontent.com/17814752/173957819-d5de9035-f254-4ab4-9390-11fa4b1a6344.png)
 ![image](https://user-images.githubusercontent.com/17814752/173957851-318e2061-5e45-4d33-a5a0-82885c6e1e6a.png)
