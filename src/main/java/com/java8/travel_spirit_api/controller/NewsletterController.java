@@ -27,7 +27,7 @@ public class NewsletterController {
     @PostMapping("/add")
     public ServiceResponse addNewsletter(@RequestBody NewsletterDTO newsletterDTO) {
         String to = newsletterDTO.getEmail();
-        String from = "enter your email";
+        String from = "travelspiritagncy@gmail.com";
         String host = "smtp.gmail.com";
 
         Properties properties = System.getProperties();
@@ -38,7 +38,7 @@ public class NewsletterController {
 
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("enter your email", "enter email password");
+                return new PasswordAuthentication("travelspiritagncy@gmail.com", "jwdqkktseoshnxjf");
             }
         });
 
